@@ -5,9 +5,9 @@ on:
     branches:
       - main
     paths:
-      - 'src/**'             # include everything in src/
       - '!experimental/**'  # exclude files in src/experimental/
-
+      - 'src/**'             # include everything in src/
+      
 jobs:
   test:
     runs-on: ubuntu-latest
