@@ -1,0 +1,17 @@
+name: Test Paths Negation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'             # include everything in src/
+      - '!experimental/**'  # exclude files in src/experimental/
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print what triggered
+        run: |
+          echo "This workflow ran because a file changed in src/, excluding src/experimental/"
