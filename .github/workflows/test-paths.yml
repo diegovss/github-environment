@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: Print what triggered
         run: |
-          echo "This workflow ran because a file changed in src/, excluding src/experimental/"
+          echo "This workflow ran because a file changed in src/, excluding experimental/"
