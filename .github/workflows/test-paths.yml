@@ -12,6 +12,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Get changed files (only experimental)
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            experimental/**
+
       - name: Print what triggered
+        if: steps.changed-files.outputs.any_changed == 'true'
         run: |
           echo "This workflow ran because a file changed in src/, excluding experimental/"
